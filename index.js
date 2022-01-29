@@ -4,9 +4,9 @@
 // [x] bind routing
 // [x] create layout
 // create data service
-// - [ ] read all
-// - [ ] read one by Id
-// - [ ] create
+// - [x] read all
+// - [x] read one by Id
+// - [x] create
 // - [ ] search
 // - [ ] edit
 // - [ ] delete
