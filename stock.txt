@@ -1,0 +1,55 @@
+Alhambra 3 OP incl.Gig Bag
+price: 318
+descr:
+    Top: Solid A+ cedar
+    Back and sides: Mahogany
+    Neck: Mahogany
+    Fretboard: Rosewood
+    Binding: Rosewood
+    Scale: 650 mm (25.6")
+    Nut width: 52 mm (2.05")
+    Finish: Open-pored
+    Colour: Natural
+    Gig bag included
+img: https://images.static-thomann.de/pics/prod/460974.jpg
+------------------------------------------------------------------------------------------------------------
+Harley Benton SC-500 BK Vintage Series
+price: 139
+descr:
+    Vintage Series
+    Body: Basswood
+    Arched top
+    Set-in maple neck
+    Neck profile: C shape
+    Fretboard: Blackwood <i>(Pinus Radiata) </i>
+    Fretboard radius: 350 mm
+    Fretboard inlays: Block
+    22 Frets
+    Scale: 628 mm
+    Nut width: 43 mm
+    Double action truss rod
+    Pickups: 2 Vintage style humbuckers
+    3-Way pickup toggle switch
+    2 Volume- and 2 tone controls
+    Gold DLX hardware
+    Tune-O-Matic bridge
+    DLX machine heads
+    Strings: Harley Benton .010 - .046
+    Colour: Black high-gloss
+img: https://images.static-thomann.de/pics/prod/362633.jpg
+------------------------------------------------------------------------------------------------------------
+Fender CD-60S All Mah
+price: 166
+descr:
+    Design: Dreadnought
+    Top: Solid mahogany
+    Scalloped X-bracing
+    Bottom and sides: Mahogany
+    Neck: Mahogany
+    Fretboard: Walnut
+    20 Frets
+    Nut width: 43 mm
+    Scale: 643 mm
+    Chrome hardware
+    Colour: Natural
+img: https://images.static-thomann.de/pics/prod/404756.jpg
