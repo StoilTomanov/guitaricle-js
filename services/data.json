@@ -1,8 +1,20 @@
 {
-    "skf492pld30": {
-        "name": "Alhambra 3 OP incl.Gig Bag",
-        "description": "Top: Solid A+ d; Back and sides: Mahogany; Neck: Mahogany; Fretboard: Rosewood; Binding: Rosewood; Scale: 650 mm (25.6); Nut width: 52 mm (2.05); Finish: Open-pored; Colour: Natural; Gig bag included; ",
-        "imageUrl": "https://images.static-thomann.de/pics/prod/460974.jpg",
-        "price": 318
-    }
+  "1210451631613": {
+    "name": "Alhambra 3 OP incl.Gig Bag",
+    "description": "Top: Solid A+ cedar\r\n    Back and sides: Mahogany\r\n    Neck: Mahogany\r\n    Fretboard: Rosewood\r\n    Binding: Rosewood\r\n    Scale: 650 mm (25.6\")\r\n    Nut width: 52 mm (2.05\")\r\n    Finish: Open-pored\r\n    Colour: Natural\r\n    Gig bag included",
+    "imageUrl": "https://images.static-thomann.de/pics/prod/460974.jpg",
+    "price": 318
+  },
+  "622131439136": {
+    "name": "Harley Benton SC-500 BK Vintage Series",
+    "description": "    Vintage Series\r\n    Body: Basswood\r\n    Arched top\r\n    Set-in maple neck\r\n    Neck profile: C shape\r\n    Fretboard: Blackwood <i>(Pinus Radiata) </i>\r\n    Fretboard radius: 350 mm\r\n    Fretboard inlays: Block\r\n    22 Frets\r\n    Scale: 628 mm\r\n    Nut width: 43 mm\r\n    Double action truss rod\r\n    Pickups: 2 Vintage style humbuckers\r\n    3-Way pickup toggle switch\r\n    2 Volume- and 2 tone controls\r\n    Gold DLX hardware\r\n    Tune-O-Matic bridge\r\n    DLX machine heads\r\n    Strings: Harley Benton .010 - .046\r\n    Colour: Black high-gloss",
+    "imageUrl": "https://images.static-thomann.de/pics/prod/362633.jpg",
+    "price": 139
+  },
+  "615371657411": {
+    "name": "Fender CD-60S All Mah",
+    "description": "Design: Dreadnought\r\n    Top: Solid mahogany\r\n    Scalloped X-bracing\r\n    Bottom and sides: Mahogany\r\n    Neck: Mahogany\r\n    Fretboard: Walnut\r\n    20 Frets\r\n    Nut width: 43 mm\r\n    Scale: 643 mm\r\n    Chrome hardware\r\n    Colour: Natural",
+    "imageUrl": "https://images.static-thomann.de/pics/prod/404756.jpg",
+    "price": 166
+  }
 }

@@ -25,7 +25,7 @@ const port = 3000;
 const handlebars = require('express-handlebars');
 
 const { about } = require('./controllers/about');
-const { create } = require('./controllers/create');
+const create = require('./controllers/create');
 const { details } = require('./controllers/details');
 const { home } = require('./controllers/home');
 const { notFound } = require('./controllers/notFound');
@@ -37,12 +37,16 @@ app.engine('.hbs', handlebars.create({
 }).engine);
 
 app.set('view engine', '.hbs');
+
+app.use(express.urlencoded({ extended: true }));
 app.use('/static/', express.static('static'));
 app.use(guitarsService());
 
 app.get('/', home);
 app.get('/about', about);
-app.get('/create', create);
+app.route('/create')
+    .get(create.get)
+    .post(create.post);
 app.get('/details/:id', details);
 
 app.all('*', notFound);

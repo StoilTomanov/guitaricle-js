@@ -5,7 +5,7 @@ const filePath = './services/data.json';
 async function read() {
     try {
         const file = await fs.readFile(filePath);
-        return JSON.parse(file)
+        return JSON.parse(file);
     } catch (err) {
         console.error('Database read error!');
         console.error(err);
@@ -15,7 +15,7 @@ async function read() {
 
 async function write(data) {
     try {
-        await fs.writeFile(filePath, JSON.stringify(data));
+        await fs.writeFile(filePath, JSON.stringify(data, null, 2));
     } catch (err) {
         console.error('Database write error!');
         console.error(err);
@@ -42,10 +42,34 @@ async function getById(id) {
 
 }
 
+function generateId() {
+    const id = [];
+    Array.from('xxxxxxxxx').forEach(x => {
+        id.push(Math.ceil(Math.random() * 16));
+    });
+    return id.join('');
+}
+
+async function createGuitar(guitar) {
+    const guitars = await read();
+    console.log(guitars);
+    let id;
+
+    do {
+        id = generateId();
+    } while (guitars.hasOwnProperty(id));
+
+    guitars[id] = guitar;
+
+    await write(guitars);
+
+}
+
 module.exports = () => (req, res, next) => {
     req.storage = {
         getAll,
         getById,
+        createGuitar,
     }
     next();
 }
