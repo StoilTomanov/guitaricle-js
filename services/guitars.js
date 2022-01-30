@@ -66,8 +66,12 @@ async function createGuitar(guitar) {
 
 async function deleteRecord(id) {
     const guitars = await read();
-    delete guitars[id];
-    await write(guitars);
+    if (guitars.hasOwnProperty(id)) {
+        delete guitars[id];
+        await write(guitars);
+    } else {
+        return undefined;
+    }
 }
 
 module.exports = () => (req, res, next) => {
