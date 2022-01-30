@@ -190,6 +190,26 @@ input[type=submit] {
     border-radius: 4px;
 }
 
+a.cancel {
+    background-color: #545775;
+    border: none;
+    padding: 8px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    width: 46.7%;
+    margin: 5px 5px 5px 25%;
+    color: white;
+    text-transform: uppercase;
+    border-radius: 4px;
+}
+
+a.cancel:hover {
+    background-color: #718F94;
+    cursor: pointer;
+}
+
 input[type=submit]:hover {
     background-color: #718F94;
     cursor: pointer;
