@@ -26,6 +26,7 @@ const handlebars = require('express-handlebars');
 
 const { about } = require('./controllers/about');
 const create = require('./controllers/create');
+const deleteGuitar = require('./controllers/deleteGuitar');
 const { details } = require('./controllers/details');
 const { home } = require('./controllers/home');
 const { notFound } = require('./controllers/notFound');
@@ -44,10 +45,13 @@ app.use(guitarsService());
 
 app.get('/', home);
 app.get('/about', about);
+app.get('/details/:id', details);
 app.route('/create')
     .get(create.get)
     .post(create.post);
-app.get('/details/:id', details);
+app.route('/delete/:id')
+    .get(deleteGuitar.deleteGuitarGet)
+    .post(deleteGuitar.deleteGuitarPost);
 
 app.all('*', notFound);
 

@@ -52,7 +52,6 @@ function generateId() {
 
 async function createGuitar(guitar) {
     const guitars = await read();
-    console.log(guitars);
     let id;
 
     do {
@@ -65,11 +64,18 @@ async function createGuitar(guitar) {
 
 }
 
+async function deleteRecord(id) {
+    const guitars = await read();
+    delete guitars[id];
+    await write(guitars);
+}
+
 module.exports = () => (req, res, next) => {
     req.storage = {
         getAll,
         getById,
         createGuitar,
+        deleteRecord,
     }
     next();
 }
