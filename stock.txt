@@ -1,3 +1,5 @@
+GUITARS
+
 Alhambra 3 OP incl.Gig Bag
 price: 318
 descr:
@@ -53,3 +55,20 @@ descr:
     Chrome hardware
     Colour: Natural
 img: https://images.static-thomann.de/pics/prod/404756.jpg
+
+ACCESSORIES
+
+QUIK LOK FS01 Footrest Black
+descr: Footrest with an adjustable height for classical guitar
+img: https://rockshock.eu/uploads/2021/10/01/1633095027_7355_i.webp
+------------------------------------------------------------------------------------------------------------
+
+Epiphone 940-ENLPCS CASES Epiphone for LP
+descr: Epiphone's Guitar case - Les Paul Standard 
+img: https://rockshock.eu/uploads/2021/10/01/1633090424_1917_i.webp
+------------------------------------------------------------------------------------------------------------
+
+Planet Waves PW-CP-07 NS Capo Lite
+descr: Capodaster for any type of guitar that will open a new world with opportunities
+img: https://rockshock.eu/uploads/2021/11/01/1635771806_326_i.jpg
+------------------------------------------------------------------------------------------------------------
