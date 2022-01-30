@@ -5,16 +5,16 @@
     "imageUrl": "https://images.static-thomann.de/pics/prod/362633.jpg",
     "price": 139
   },
-  "615371657411": {
-    "name": "Fender CD-60S All Mah",
-    "description": "Design: Dreadnought\r\n    Top: Solid mahogany\r\n    Scalloped X-bracing\r\n    Bottom and sides: Mahogany\r\n    Neck: Mahogany\r\n    Fretboard: Walnut\r\n    20 Frets\r\n    Nut width: 43 mm\r\n    Scale: 643 mm\r\n    Chrome hardware\r\n    Colour: Natural",
-    "imageUrl": "https://images.static-thomann.de/pics/prod/404756.jpg",
-    "price": 166
-  },
   "16141316752216": {
     "name": "Alhambra 3 OP incl.Gig Bag",
     "description": "Top: Solid A+ cedar\r\n    Back and sides: Mahogany\r\n    Neck: Mahogany\r\n    Fretboard: Rosewood\r\n    Binding: Rosewood\r\n    Scale: 650 mm (25.6\")\r\n    Nut width: 52 mm (2.05\")\r\n    Finish: Open-pored\r\n    Colour: Natural\r\n    Gig bag included",
     "imageUrl": "https://images.static-thomann.de/pics/prod/460974.jpg",
     "price": 318
+  },
+  "10316115104314": {
+    "name": "Fender CD-60S All Mah",
+    "description": "Design: Dreadnought\r\n    Top: Solid mahogany\r\n    Scalloped X-bracing\r\n    Bottom and sides: Mahogany\r\n    Neck: Mahogany\r\n    Fretboard: Walnut\r\n    20 Frets\r\n    Nut width: 43 mm\r\n    Scale: 643 mm\r\n    Chrome hardware\r\n    Colour: Natural",
+    "imageUrl": "https://images.static-thomann.de/pics/prod/404756.jpg",
+    "price": 166
   }
 }

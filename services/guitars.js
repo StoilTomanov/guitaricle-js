@@ -74,12 +74,23 @@ async function deleteRecord(id) {
     }
 }
 
+async function editRecord(guitar, id) {
+    const guitars = await read();
+    if (guitars.hasOwnProperty(id)) {
+        guitars[id] = guitar;
+        await write(guitars);
+    } else {
+        return undefined;
+    }
+}
+
 module.exports = () => (req, res, next) => {
     req.storage = {
         getAll,
         getById,
         createGuitar,
         deleteRecord,
+        editRecord,
     }
     next();
 }

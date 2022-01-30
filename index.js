@@ -28,6 +28,7 @@ const { about } = require('./controllers/about');
 const create = require('./controllers/create');
 const deleteGuitar = require('./controllers/deleteGuitar');
 const { details } = require('./controllers/details');
+const edit = require('./controllers/edit');
 const { home } = require('./controllers/home');
 const { notFound } = require('./controllers/notFound');
 
@@ -52,6 +53,9 @@ app.route('/create')
 app.route('/delete/:id')
     .get(deleteGuitar.deleteGuitarGet)
     .post(deleteGuitar.deleteGuitarPost);
+app.route('/edit/:id')
+    .get(edit.editGet)
+    .post(edit.editPost)
 
 app.all('*', notFound);
 
