@@ -13,9 +13,14 @@ async function deleteGuitarGet(req, res) {
     }
 }
 
-function deleteGuitarPost(req, res) {
-    req.storage.deleteRecord(req.params.id)
-    res.redirect('/');
+async function deleteGuitarPost(req, res) {
+    try {
+        await req.storage.deleteRecord(req.params.id)
+        res.redirect('/');
+    } catch (err) {
+        res.redirect('/404');
+    }
+
 }
 
 module.exports = {
