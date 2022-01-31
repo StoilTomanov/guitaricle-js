@@ -19,11 +19,13 @@
 // - [ ] edit
 // - [ ] delete
 
+// initial import
 const express = require('express');
 const app = express();
-const port = 3000;
 const handlebars = require('express-handlebars');
+const port = 3000;
 
+// controllers import
 const { about } = require('./controllers/about');
 const create = require('./controllers/create');
 const deleteGuitar = require('./controllers/deleteGuitar');
@@ -32,8 +34,11 @@ const edit = require('./controllers/edit');
 const { home } = require('./controllers/home');
 const { notFound } = require('./controllers/notFound');
 
+// services import
 const guitarsService = require('./services/guitars');
 
+
+// app setup
 app.engine('.hbs', handlebars.create({
     extname: '.hbs'
 }).engine);
@@ -44,6 +49,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/static/', express.static('static'));
 app.use(guitarsService());
 
+// express router setup
 app.get('/', home);
 app.get('/about', about);
 app.get('/details/:id', details);
@@ -59,4 +65,5 @@ app.route('/edit/:id')
 
 app.all('*', notFound);
 
+// initiate the server
 app.listen(port, () => console.log(`Server is running on port ${port}`));

@@ -2,6 +2,7 @@ const fs = require('fs/promises');
 
 const filePath = './services/data.json';
 
+// read data
 async function read() {
     try {
         const file = await fs.readFile(filePath);
@@ -13,6 +14,7 @@ async function read() {
     }
 }
 
+// write data
 async function write(data) {
     try {
         await fs.writeFile(filePath, JSON.stringify(data, null, 2));
@@ -23,6 +25,7 @@ async function write(data) {
     }
 }
 
+// read all records
 async function getAll() {
     const data = await read();
     return Object
@@ -30,6 +33,7 @@ async function getAll() {
         .map(([id, v]) => Object.assign({}, { id }, v))
 }
 
+// get record by id
 async function getById(id) {
     const data = await read();
     const guitar = data[id];
@@ -42,6 +46,7 @@ async function getById(id) {
 
 }
 
+// id generator
 function generateId() {
     const id = [];
     Array.from('xxxxxxxxx').forEach(x => {
@@ -50,6 +55,7 @@ function generateId() {
     return id.join('');
 }
 
+// record creation
 async function createGuitar(guitar) {
     const guitars = await read();
     let id;
@@ -64,6 +70,7 @@ async function createGuitar(guitar) {
 
 }
 
+// record removal
 async function deleteRecord(id) {
     const guitars = await read();
     if (guitars.hasOwnProperty(id)) {
@@ -74,6 +81,7 @@ async function deleteRecord(id) {
     }
 }
 
+// edit record
 async function editRecord(guitar, id) {
     const guitars = await read();
     if (guitars.hasOwnProperty(id)) {
