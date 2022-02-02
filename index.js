@@ -24,8 +24,8 @@
 // - [ ] create accessory
 // - [ ] attach accessory to guitar
 // - [ ] update details to include accessory
-// [ ] add database connection
-// [ ] create Guitar model
+// [x] add database connection
+// [x] create Guitar model
 // [ ] upgrade guitar service to use Guitar model
 // [ ] add validation rules to Guitar model
 // [ ] create Accessory model

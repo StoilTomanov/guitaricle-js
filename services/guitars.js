@@ -1,6 +1,17 @@
 const fs = require('fs/promises');
+const { Guitar } = require('../models/Guitar');
 
 const filePath = './services/data.json';
+
+function guitarViewModel(guitar) {
+    return {
+        id: guitar._id,
+        name: guitar.name,
+        description: guitar.description,
+        price: guitar.price,
+        imageUrl: guitar.imageUrl,
+    }
+}
 
 // read data
 async function read() {
@@ -27,23 +38,18 @@ async function write(data) {
 
 // read all records
 async function getAll() {
-    const data = await read();
-    return Object
-        .entries(data)
-        .map(([id, v]) => Object.assign({}, { id }, v))
+    const allGuitars = await Guitar.find({});
+    if (allGuitars) {
+        return allGuitars.map(guitar => (guitarViewModel(guitar)));
+    }
 }
 
 // get record by id
 async function getById(id) {
-    const data = await read();
-    const guitar = data[id];
-
-    if (guitar) {
-        return Object.assign({}, { id }, guitar);
-    } else {
-        return undefined;
+    const guitarById = await Guitar.findById(id);
+    if (guitarById) {
+        return guitarViewModel(guitarById);
     }
-
 }
 
 // id generator
@@ -57,17 +63,8 @@ function generateId() {
 
 // record creation
 async function createGuitar(guitar) {
-    const guitars = await read();
-    let id;
-
-    do {
-        id = generateId();
-    } while (guitars.hasOwnProperty(id));
-
-    guitars[id] = guitar;
-
-    await write(guitars);
-
+    const result = new Guitar(guitar);
+    await result.save();
 }
 
 // record removal
