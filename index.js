@@ -32,7 +32,6 @@
 
 // initial import
 const express = require('express');
-const app = express();
 const handlebars = require('express-handlebars');
 const port = 3000;
 
@@ -45,36 +44,43 @@ const edit = require('./controllers/edit');
 const { home } = require('./controllers/home');
 const { notFound } = require('./controllers/notFound');
 
+const initDb = require('./models/index');
+
 // services import
 const guitarsService = require('./services/guitars');
 
+async function start() {
+    await initDb();
 
-// app setup
-app.engine('.hbs', handlebars.create({
-    extname: '.hbs'
-}).engine);
+    // app setup
+    const app = express();
+    app.engine('.hbs', handlebars.create({
+        extname: '.hbs'
+    }).engine);
 
-app.set('view engine', '.hbs');
+    app.set('view engine', '.hbs');
 
-app.use(express.urlencoded({ extended: true }));
-app.use('/static/', express.static('static'));
-app.use(guitarsService());
+    app.use(express.urlencoded({ extended: true }));
+    app.use('/static/', express.static('static'));
+    app.use(guitarsService());
 
-// express router setup
-app.get('/', home);
-app.get('/about', about);
-app.get('/details/:id', details);
-app.route('/create')
-    .get(create.get)
-    .post(create.post);
-app.route('/delete/:id')
-    .get(deleteGuitar.deleteGuitarGet)
-    .post(deleteGuitar.deleteGuitarPost);
-app.route('/edit/:id')
-    .get(edit.editGet)
-    .post(edit.editPost);
+    // express router setup
+    app.get('/', home);
+    app.get('/about', about);
+    app.get('/details/:id', details);
+    app.route('/create')
+        .get(create.get)
+        .post(create.post);
+    app.route('/delete/:id')
+        .get(deleteGuitar.deleteGuitarGet)
+        .post(deleteGuitar.deleteGuitarPost);
+    app.route('/edit/:id')
+        .get(edit.editGet)
+        .post(edit.editPost);
 
-app.all('*', notFound);
+    app.all('*', notFound);
 
-// initiate the server
-app.listen(port, () => console.log(`Server is running on port ${port}`));
+    // initiate the server
+    app.listen(port, () => console.log(`Server is running on port ${port}`));
+
+}
