@@ -1,8 +1,6 @@
 const fs = require('fs/promises');
 const { Guitar } = require('../models/Guitar');
 
-const filePath = './services/data.json';
-
 function guitarViewModel(guitar) {
     return {
         id: guitar._id,
@@ -10,29 +8,6 @@ function guitarViewModel(guitar) {
         description: guitar.description,
         price: guitar.price,
         imageUrl: guitar.imageUrl,
-    }
-}
-
-// read data
-async function read() {
-    try {
-        const file = await fs.readFile(filePath);
-        return JSON.parse(file);
-    } catch (err) {
-        console.error('Database read error!');
-        console.error(err);
-        process.exit(1);
-    }
-}
-
-// write data
-async function write(data) {
-    try {
-        await fs.writeFile(filePath, JSON.stringify(data, null, 2));
-    } catch (err) {
-        console.error('Database write error!');
-        console.error(err);
-        process.exit(1);
     }
 }
 
@@ -52,15 +27,6 @@ async function getById(id) {
     }
 }
 
-// id generator
-function generateId() {
-    const id = [];
-    Array.from('xxxxxxxxx').forEach(x => {
-        id.push(Math.ceil(Math.random() * 16));
-    });
-    return id.join('');
-}
-
 // record creation
 async function createGuitar(guitar) {
     const result = new Guitar(guitar);
@@ -69,23 +35,15 @@ async function createGuitar(guitar) {
 
 // record removal
 async function deleteRecord(id) {
-    const guitars = await read();
-    if (guitars.hasOwnProperty(id)) {
-        delete guitars[id];
-        await write(guitars);
-    } else {
-        return undefined;
+    if (id) {
+        await Guitar.findByIdAndDelete(id);
     }
 }
 
 // edit record
 async function editRecord(guitar, id) {
-    const guitars = await read();
-    if (guitars.hasOwnProperty(id)) {
-        guitars[id] = guitar;
-        await write(guitars);
-    } else {
-        return undefined;
+    if (guitar && id) {
+        await Guitar.findByIdAndUpdate(id, guitar);
     }
 }
 
