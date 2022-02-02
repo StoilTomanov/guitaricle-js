@@ -8,16 +8,27 @@
 // - [x] read one by Id
 // - [x] create
 // - [ ] search
-// - [ ] edit
-// - [ ] delete
+// - [x] edit
+// - [x] delete
+// - [ ] accessory read
+// - [ ] accessory create
+// - [ ] attach accessory
 // implement controllers
-// - [ ] home (catalog)
-// - [ ] about
-// - [ ] details
-// - [ ] create
-// - [ ] improv ed home (search)
-// - [ ] edit
-// - [ ] delete
+// - [x] home (catalog)
+// - [x] about
+// - [x] details
+// - [x] create
+// - [ ] improved home (search)
+// - [x] edit
+// - [x] delete
+// - [ ] create accessory
+// - [ ] attach accessory to guitar
+// - [ ] update details to include accessory
+// [ ] add database connection
+// [ ] create Guitar model
+// [ ] upgrade guitar service to use Guitar model
+// [ ] add validation rules to Guitar model
+// [ ] create Accessory model
 
 // initial import
 const express = require('express');
@@ -61,7 +72,7 @@ app.route('/delete/:id')
     .post(deleteGuitar.deleteGuitarPost);
 app.route('/edit/:id')
     .get(edit.editGet)
-    .post(edit.editPost)
+    .post(edit.editPost);
 
 app.all('*', notFound);
 
