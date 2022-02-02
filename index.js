@@ -44,14 +44,13 @@ const edit = require('./controllers/edit');
 const { home } = require('./controllers/home');
 const { notFound } = require('./controllers/notFound');
 
-const initDb = require('./models/index');
+const { initDb } = require('./models/index');
 
 // services import
 const guitarsService = require('./services/guitars');
 
 async function start() {
     await initDb();
-
     // app setup
     const app = express();
     app.engine('.hbs', handlebars.create({
@@ -84,3 +83,5 @@ async function start() {
     app.listen(port, () => console.log(`Server is running on port ${port}`));
 
 }
+
+start();

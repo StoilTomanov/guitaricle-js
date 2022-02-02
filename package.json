@@ -1,7 +1,6 @@
 {
     "name": "03.-cubicle-workshop-part-1-resources",
     "version": "1.0.0",
-    "description": "",
     "main": "index.js",
     "scripts": {
         "start": "nodemon"
@@ -13,5 +12,15 @@
         "express": "^4.17.2",
         "express-handlebars": "^6.0.2",
         "mongoose": "^6.1.10"
-    }
+    },
+    "devDependencies": {},
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/StoilTomanov/guitaricle-js.git"
+    },
+    "bugs": {
+        "url": "https://github.com/StoilTomanov/guitaricle-js/issues"
+    },
+    "homepage": "https://github.com/StoilTomanov/guitaricle-js#readme",
+    "description": ""
 }
