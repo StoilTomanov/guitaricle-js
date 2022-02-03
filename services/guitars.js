@@ -30,6 +30,9 @@ async function getById(id) {
 // record creation
 async function createGuitar(guitar) {
     const result = new Guitar(guitar);
+    if (result.imageUrl == '') {
+        result.imageUrl = 'https://st4.depositphotos.com/14953852/22772/v/600/depositphotos_227725020-stock-illustration-image-available-icon-flat-vector.jpg'
+    }
     await result.save();
 }
 

@@ -79,6 +79,89 @@ descr:
     Includes a chrome pickup cover
     Made by Sire
 img: https://images.static-thomann.de/pics/prod/445968.jpg
+------------------------------------------------------------------------------------------------------------
+Cordoba F7 Paco Flamenco Guitar
+price: 455
+descr:
+    Paco De Lucia Signature Model
+    Nylon strings
+    Solid cedar top
+    Rosewood (Dalbergia latifolia) back and sides
+    Maple binding
+    Traditional neck profile
+    Rosewood (Dalbergia latifolia) fretboard
+    Scale: 650 mm
+    Nut width: 52 mm
+    19 Frets
+    Rosewood (Dalbergia latifolia) bridge
+    Bone saddle and nut
+    Machine heads: Black-gold Cordoba
+    2-Way truss rod
+    Savarez Crystal Corum high-tension 500 strings
+    Colour: Natural high-gloss
+img: https://images.static-thomann.de/pics/prod/365998.jpg
+------------------------------------------------------------------------------------------------------------
+Harley Benton TE-62CC CF
+price: 122
+descr:
+    Deluxe Series
+    Poplar body
+    Bolt-on neck made of caramel maple with Roseacer skunkstripe
+    Maple fingerboard
+    Neck profile: Modern D
+    Dual action truss rod
+    Scale: 648 mm
+    Fretboard radius: 305 mm
+    Nut width: 42 mm
+    21 Frets
+    Pickups: 2 Roswell AlNiCo 5 TEA-F-CR/TEA-B single coils
+    1 Volume and 1 tone control
+    3-way switch
+    Single layer mint green pickguard
+    Hardtail bridge
+    Kluson style tuners
+    Deluxe hardware
+    Factory strings : Daddario EXL110 .010 - .046 (Art. 104555)
+    Colour: Charcoal Frost
+img: https://images.static-thomann.de/pics/prod/502846.jpg
+------------------------------------------------------------------------------------------------------------
+Cort SFX1F NS 2
+price: 222
+descr:
+    With cutaway
+    Top: Solid spruce
+    Back and sides: Mahogany
+    Arched bottom
+    Set neck: Mahogany
+    Fretboard and bridge: Ovangkol
+    Nut width: 43 mm
+    20 Frets
+    Scale: 643 mm
+    Chrome-plated machine heads with black knobs
+    Fishman Isys Plus Preamp
+    Fishman Sonicore pickup system
+    Colour: Natural satin
+img: https://images.static-thomann.de/pics/prod/446638.jpg
+------------------------------------------------------------------------------------------------------------
+Epiphone Slash J-45 Vermillion Burst
+price: 749
+descr:
+    Slash Signature Model
+    Style: Square Shoulder Dreadnought
+    Top: Solid sitka spruce
+    Back and sides: Solid mahogany
+    Neck: Mahogany
+    Fingerboard: Indian Laurel
+    4-ply top and single-ply back binding
+    Neck profile: Slash custom rounded C
+    Scale: 628 mm (24.724")
+    Nut width: 43 mm (1.693")
+    Bone nut
+    20 Frets
+    Pickup system: LR Baggs VTC
+    Colour: Vermillion Burst
+    Incl. Case
+img: https://images.static-thomann.de/pics/prod/518607.jpg
 
 ACCESSORIES
 
