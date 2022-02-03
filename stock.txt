@@ -101,29 +101,19 @@ descr:
     Colour: Natural high-gloss
 img: https://images.static-thomann.de/pics/prod/365998.jpg
 ------------------------------------------------------------------------------------------------------------
-Harley Benton TE-62CC CF
-price: 122
+Epiphone Les Paul Special VE VSB
+price: 155
 descr:
-    Deluxe Series
     Poplar body
-    Bolt-on neck made of caramel maple with Roseacer skunkstripe
-    Maple fingerboard
-    Neck profile: Modern D
-    Dual action truss rod
-    Scale: 648 mm
-    Fretboard radius: 305 mm
-    Nut width: 42 mm
-    21 Frets
-    Pickups: 2 Roswell AlNiCo 5 TEA-F-CR/TEA-B single coils
-    1 Volume and 1 tone control
-    3-way switch
-    Single layer mint green pickguard
-    Hardtail bridge
-    Kluson style tuners
-    Deluxe hardware
-    Factory strings : Daddario EXL110 .010 - .046 (Art. 104555)
-    Colour: Charcoal Frost
-img: https://images.static-thomann.de/pics/prod/502846.jpg
+    Bolt-on mahogany neck (Swietenia macrophylla - Origin: India / Indonesia)
+    60's Slim taper neck profile
+    Rosewood fretboard (Dalbergia latifolia)
+    Dot inlays
+    Pickups: Epiphone 650R and 700T humbuckers
+    Chrome hardware
+    Open-pore lacquer
+    Colour: Vintage Sunburst
+img: https://images.static-thomann.de/pics/prod/383735.jpg
 ------------------------------------------------------------------------------------------------------------
 Cort SFX1F NS 2
 price: 222

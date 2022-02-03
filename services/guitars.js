@@ -33,6 +33,9 @@ async function createGuitar(guitar) {
     if (result.imageUrl == '') {
         result.imageUrl = 'https://st4.depositphotos.com/14953852/22772/v/600/depositphotos_227725020-stock-illustration-image-available-icon-flat-vector.jpg'
     }
+    if (result.description == '') {
+        result.description = 'No description for this article'
+    }
     await result.save();
 }
 
