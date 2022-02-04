@@ -18,8 +18,8 @@ img.cube {
     display: block;
     margin: 0 auto;
     text-align: center;
-    width: 130px;
-    height: 350px;
+    /* width: 130px;
+    height: 350px; */
 }
 
 img.logo {

@@ -11,5 +11,15 @@ function accessoryViewModel(accessory) {
 
 async function getAllAccessories() {
     const allAccessories = await Accessory.find({});
-    console.log(allAccessories);
+    return allAccessories;
+}
+
+async function createAccessory(accessory) {
+    const newRecord = new Accessory(accessory);
+    await newRecord.save();
+}
+
+module.exports = {
+    getAllAccessories,
+    createAccessory
 }

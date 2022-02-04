@@ -37,7 +37,7 @@ const port = 3000;
 
 // controllers import
 const { about } = require('./controllers/about');
-const accessory = require('./controllers/accessory');
+const accessory = require('./controllers/createAccessory');
 const create = require('./controllers/create');
 const deleteGuitar = require('./controllers/deleteGuitar');
 const { details } = require('./controllers/details');
@@ -48,7 +48,7 @@ const { notFound } = require('./controllers/notFound');
 const { initDb } = require('./models/index');
 
 // services import
-const guitarsService = require('./services/guitars');
+const storage = require('./middlewares/storage');
 
 async function start() {
     await initDb();
@@ -62,7 +62,7 @@ async function start() {
 
     app.use(express.urlencoded({ extended: true }));
     app.use('/static/', express.static('static'));
-    app.use(guitarsService());
+    app.use(storage());
 
     // express router setup
     app.get('/', home);

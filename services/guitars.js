@@ -52,13 +52,24 @@ async function editRecord(guitar, id) {
     }
 }
 
-module.exports = () => (req, res, next) => {
-    req.storage = {
-        getAll,
-        getById,
-        createGuitar,
-        deleteRecord,
-        editRecord,
-    }
-    next();
+module.exports = {
+    getAll,
+    getById,
+    createGuitar,
+    deleteRecord,
+    editRecord,
 }
+
+
+
+
+// module.exports = () => (req, res, next) => {
+//     req.storage = {
+//         getAll,
+//         getById,
+//         createGuitar,
+//         deleteRecord,
+//         editRecord,
+//     }
+//     next();
+// }
