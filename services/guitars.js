@@ -1,4 +1,3 @@
-const fs = require('fs/promises');
 const { Guitar } = require('../models/Guitar');
 
 function guitarViewModel(guitar) {

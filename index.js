@@ -28,7 +28,7 @@
 // [x] create Guitar model
 // [ ] upgrade guitar service to use Guitar model
 // [ ] add validation rules to Guitar model
-// [ ] create Accessory model
+// [x] create Accessory model
 
 // initial import
 const express = require('express');
@@ -37,6 +37,7 @@ const port = 3000;
 
 // controllers import
 const { about } = require('./controllers/about');
+const accessory = require('./controllers/accessory');
 const create = require('./controllers/create');
 const deleteGuitar = require('./controllers/deleteGuitar');
 const { details } = require('./controllers/details');
@@ -76,6 +77,9 @@ async function start() {
     app.route('/edit/:id')
         .get(edit.editGet)
         .post(edit.editPost);
+    app.route('/accessory')
+        .get(accessory.accessoryGet)
+        .post(accessory.accessoryPost);
 
     app.all('*', notFound);
 

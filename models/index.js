@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const { Guitar } = require('./Guitar');
+const { Accessory } = require('./Accessory');
 
 const connectionString = 'mongodb://localhost:27017/guitaricle';
 
