@@ -40,6 +40,7 @@ const { about } = require('./controllers/about');
 const accessory = require('./controllers/createAccessory');
 const create = require('./controllers/create');
 const deleteGuitar = require('./controllers/deleteGuitar');
+const attach = require('./controllers/attachAccessory');
 const { details } = require('./controllers/details');
 const edit = require('./controllers/edit');
 const { home } = require('./controllers/home');
@@ -47,7 +48,6 @@ const { notFound } = require('./controllers/notFound');
 
 const { initDb } = require('./models/index');
 
-// services import
 const storage = require('./middlewares/storage');
 
 async function start() {
@@ -80,6 +80,9 @@ async function start() {
     app.route('/accessory')
         .get(accessory.accessoryGet)
         .post(accessory.accessoryPost);
+    app.route('/attach/:id')
+        .get(attach.attachGet)
+        .post(attach.attachPost);
 
     app.all('*', notFound);
 
