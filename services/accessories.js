@@ -6,6 +6,7 @@ function accessoryViewModel(accessory) {
         name: accessory.name,
         description: accessory.description,
         imageUrl: accessory.imageUrl,
+        // add price here and in the model
     }
 }
 

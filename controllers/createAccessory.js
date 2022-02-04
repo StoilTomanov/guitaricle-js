@@ -11,8 +11,15 @@ async function accessoryPost(req, res) {
         description: req.body.description,
         imageUrl: req.body.imageUrl,
     }
-    res.redirect('/');
-    await req.storage.createAccessory(accessory);
+    try {
+        await req.storage.createAccessory(accessory);
+        res.redirect('/');
+    } catch (error) {
+        console.error('Error occure when creating the accessory');
+        console.error(error.message);
+        res.redirect('/accessory');
+    }
+
 }
 
 module.exports = {
