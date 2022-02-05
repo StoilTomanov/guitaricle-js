@@ -1,15 +1,5 @@
 const { Guitar } = require('../models/Guitar');
-
-function guitarViewModel(guitar) {
-    return {
-        id: guitar._id,
-        name: guitar.name,
-        description: guitar.description,
-        price: guitar.price,
-        imageUrl: guitar.imageUrl,
-        accessories: guitar.accessories,
-    }
-}
+const { guitarViewModel } = require('./util');
 
 // read all records
 async function getAll() {
@@ -21,9 +11,11 @@ async function getAll() {
 
 // get record by id
 async function getById(id) {
-    const guitarById = await Guitar.findById(id);
+    const guitarById = await Guitar.findById(id).populate('accessories');
     if (guitarById) {
         return guitarViewModel(guitarById);
+    } else {
+        return undefined;
     }
 }
 
