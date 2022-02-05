@@ -1,12 +1,11 @@
-const { getAllAccessories } = require("../services/accessories");
-
 async function attachGet(req, res) {
     const id = req.params.id;
-    const allAccessories = await await getAllAccessories();
-    console.log(allAccessories);
 
     try {
-        const guitar = await req.storage.getById(id);
+        const [guitar, accessories] = await Promise.all([
+            req.storage.getById(id),
+            req.storage.getAllAccessories(),
+        ]);
         res.locals = {
             guitar,
             allAccessories,
@@ -20,6 +19,8 @@ async function attachGet(req, res) {
 }
 
 async function attachPost(req, res) {
+    console.log(req.params.id);
+    console.log(req.body);
     res.redirect('/');
 
 }

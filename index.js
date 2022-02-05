@@ -27,7 +27,7 @@
 // [x] add database connection
 // [x] create Guitar model
 // [ ] upgrade guitar service to use Guitar model
-// [ ] add validation rules to Guitar model
+// [x] add validation rules to Guitar model
 // [x] create Accessory model
 
 // initial import
