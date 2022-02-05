@@ -1,4 +1,4 @@
-const { getAll, getById, createGuitar, deleteRecord, editRecord } = require('../services/guitars');
+const { getAll, getById, createGuitar, deleteRecord, editRecord, attachAccessory } = require('../services/guitars');
 const { getAllAccessories, createAccessory } = require('../services/accessories');
 
 module.exports = () => (req, res, next) => {
@@ -10,6 +10,7 @@ module.exports = () => (req, res, next) => {
         editRecord,
         getAllAccessories,
         createAccessory,
+        attachAccessory,
     }
     next();
 }

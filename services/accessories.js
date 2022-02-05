@@ -6,13 +6,13 @@ function accessoryViewModel(accessory) {
         name: accessory.name,
         description: accessory.description,
         imageUrl: accessory.imageUrl,
-        price: accessory.price
+        price: accessory.price,
     }
 }
 
 async function getAllAccessories() {
     const allAccessories = await Accessory.find({});
-    return allAccessories;
+    return allAccessories.map(accessoryViewModel);
 }
 
 async function createAccessory(accessory) {

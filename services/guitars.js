@@ -7,6 +7,7 @@ function guitarViewModel(guitar) {
         description: guitar.description,
         price: guitar.price,
         imageUrl: guitar.imageUrl,
+        accessories: guitar.accessories,
     }
 }
 
@@ -48,8 +49,24 @@ async function deleteRecord(id) {
 // edit record
 async function editRecord(guitar, id) {
     if (guitar && id) {
-        await Guitar.findByIdAndUpdate(id, guitar);
+        const currentGuitar = await Guitar.findById(id);
+
+        currentGuitar.name = guitar.name;
+        currentGuitar.description = guitar.description;
+        currentGuitar.imageUrl = guitar.imageUrl;
+        currentGuitar.price = guitar.price;
+        currentGuitar.accessories = guitar.accessories;
+
     }
+}
+
+async function attachAccessory(guitarId, accessoryId) {
+    const currentGuitar = await Guitar.findById(guitarId);
+
+    currentGuitar.accessories.push(accessoryId);
+
+    await currentGuitar.save();
+
 }
 
 module.exports = {
@@ -58,4 +75,5 @@ module.exports = {
     createGuitar,
     deleteRecord,
     editRecord,
+    attachAccessory
 }

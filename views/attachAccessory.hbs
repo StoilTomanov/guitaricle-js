@@ -1,10 +1,9 @@
-{{#with guitar}}
 <h1>Attach a new accessory</h1>
 <div class="form">
-    <h2>{{name}}</h2>
-    <img class="cube" src="{{imageUrl}}">
+    <h2>{{guitar.name}}</h2>
+    <img class="cube" src="{{guitar.imageUrl}}">
     {{#if accessories}}
-    <form action="/attach/{{id}}" method="POST">
+    <form action="/attach/{{guitar.id}}" method="POST">
         <label for="accessory">Accessories</label>
         <select id="accessory" name="accessory" />
         {{#each accessories}}
@@ -12,11 +11,9 @@
         {{/each}}
         </select>
         <input type="submit" value="Attach">
-        <a href="/details/{{id}}" class="cancel">Cancel</a>
+        <a href="/details/{{guitar.id}}" class="cancel">Cancel</a>
     </form>
     {{else}}
     <h3 class="italic">This guitar has all available accessories so far or there is no available at all...</h3>
     {{/if}}
 </div>
-
-{{/with}}

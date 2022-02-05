@@ -4,11 +4,12 @@ async function attachGet(req, res) {
     try {
         const [guitar, accessories] = await Promise.all([
             req.storage.getById(id),
-            req.storage.getAllAccessories(),
+            req.storage.getAllAccessories()
         ]);
+
         res.locals = {
             guitar,
-            allAccessories,
+            accessories,
             title: "Attach accessory",
         };
 
@@ -19,9 +20,17 @@ async function attachGet(req, res) {
 }
 
 async function attachPost(req, res) {
-    console.log(req.params.id);
-    console.log(req.body);
-    res.redirect('/');
+    const guitarId = req.params.id;
+    const accessoryId = req.body.accessory;
+
+    try {
+        req.storage.attachAccessory(guitarId, accessoryId)
+        res.redirect('/');
+    } catch (error) {
+        console.error('Error occure when creating the accessory');
+        console.error(error.message);
+        res.redirect('/attach/' + guitarId);
+    }
 
 }
 

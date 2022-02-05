@@ -158,11 +158,13 @@ ACCESSORIES
 QUIK LOK FS01 Footrest Black
 descr: Footrest with an adjustable height for classical guitar
 img: https://rockshock.eu/uploads/2021/10/01/1633095027_7355_i.webp
+price: 25
 ------------------------------------------------------------------------------------------------------------
 
 Epiphone 940-ENLPCS CASES Epiphone for LP
 descr: Epiphone's Guitar case - Les Paul Standard 
 img: https://rockshock.eu/uploads/2021/10/01/1633090424_1917_i.webp
+price: 80
 ------------------------------------------------------------------------------------------------------------
 
 Planet Waves PW-CP-07 NS Capo Lite

@@ -10,6 +10,7 @@ async function accessoryPost(req, res) {
         name: req.body.name,
         description: req.body.description,
         imageUrl: req.body.imageUrl,
+        price: req.body.price,
     }
     try {
         await req.storage.createAccessory(accessory);
