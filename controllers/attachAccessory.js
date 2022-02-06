@@ -8,11 +8,11 @@ async function attachGet(req, res) {
         ]);
 
         const exitstingId = guitar.accessories.map(a => a.id.toString())
-        const availableAccessories = accessories.filter(a => exitstingId.includes(a.id.toString()))
+        const availableAccessories = accessories.filter(a => exitstingId.includes(a.id.toString()) == false)
 
         res.locals = {
             guitar,
-            accessories,
+            accessories: availableAccessories,
             title: "Attach accessory",
         };
 

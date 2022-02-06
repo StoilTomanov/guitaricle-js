@@ -49,6 +49,7 @@ async function editRecord(guitar, id) {
         currentGuitar.price = guitar.price;
         currentGuitar.accessories = guitar.accessories;
 
+        currentGuitar.save();
     }
 }
 
