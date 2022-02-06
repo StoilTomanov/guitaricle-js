@@ -10,9 +10,13 @@
 // - [ ] search
 // - [x] edit
 // - [x] delete
-// - [ ] accessory read
-// - [ ] accessory create
-// - [ ] attach accessory
+// - [x] accessory read
+// - [x] accessory create
+// - [x] attach accessory
+// - [ ] register user
+// - [ ] login user
+// - [ ] logout user
+// - [ ] add authorization checks to data modification
 // implement controllers
 // - [x] home (catalog)
 // - [x] about
@@ -21,14 +25,20 @@
 // - [ ] improved home (search)
 // - [x] edit
 // - [x] delete
-// - [ ] create accessory
-// - [ ] attach accessory to guitar
-// - [ ] update details to include accessory
+// - [x] create accessory
+// - [x] attach accessory to guitar
+// - [x] update details to include accessory
+// - [ ] auth controller with login, register, logout actions
+// - [ ] protect routes
+// - [ ] only show edit buttons for record owner
 // [x] add database connection
 // [x] create Guitar model
-// [ ] upgrade guitar service to use Guitar model
+// [x] upgrade guitar service to use Guitar model
 // [x] add validation rules to Guitar model
 // [x] create Accessory model
+// [ ] add session middleware and auth libraries
+// [ ] create User model
+// [ ] add owner property to Guitar, Accessory models
 
 // initial import
 const express = require('express');
