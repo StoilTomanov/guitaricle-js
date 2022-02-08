@@ -51,6 +51,7 @@ const accessory = require('./controllers/createAccessory');
 const create = require('./controllers/create');
 const deleteGuitar = require('./controllers/deleteGuitar');
 const attach = require('./controllers/attachAccessory');
+const auth = require('./controllers/auth');
 const { details } = require('./controllers/details');
 const edit = require('./controllers/edit');
 const { home } = require('./controllers/home');
@@ -93,6 +94,12 @@ async function start() {
     app.route('/attach/:id')
         .get(attach.attachGet)
         .post(attach.attachPost);
+    app.route('/login')
+        .get(auth.loginGet)
+        .post(auth.loginPost);
+    app.route('/register')
+        .get(auth.registerGet)
+        .post(auth.registerPost);
 
     app.all('*', notFound);
 
