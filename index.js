@@ -100,6 +100,7 @@ async function start() {
     app.route('/register')
         .get(auth.registerGet)
         .post(auth.registerPost);
+    app.get('/logout', auth.logout);
 
     app.all('*', notFound);
 

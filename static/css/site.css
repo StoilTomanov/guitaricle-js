@@ -54,6 +54,7 @@ header ul li a:hover {
 
 main {
     margin: 0 4em;
+    margin-bottom: 100px;
     border-radius: 15px;
     padding: 2em;
 }
@@ -230,6 +231,24 @@ a.cancel:hover {
     cursor: pointer;
 }
 
+p.auth-acct {
+    font-size: 120%;
+    text-align: center;
+}
+
+p.auth-acct a {
+    text-decoration: none;
+    transition: 0.2s;
+    color: rgb(5, 20, 105);
+    font-size: 120%;
+    text-transform: none;
+}
+
+p.auth-acct a:hover {
+    transition: 0.2s;
+    color: rgb(16, 168, 2);
+}
+
 span.error {
     animation: fadeOut 1s forwards;
     animation-delay: 2s;
@@ -271,8 +290,11 @@ h2 {
 }
 
 footer {
+    position: fixed;
     background: #607588;
     padding: 1em;
+    width: 100%;
+    bottom: 0;
     text-align: center;
     color: white;
     font-size: 20px;

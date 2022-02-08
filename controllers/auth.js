@@ -6,7 +6,7 @@ function loginGet(req, res) {
 }
 
 function loginPost(req, res) {
-
+    res.redirect('/');
 }
 
 function registerGet(req, res) {
@@ -17,11 +17,11 @@ function registerGet(req, res) {
 }
 
 function registerPost(req, res) {
-
+    res.redirect('/');
 }
 
 function logout(req, res) {
-
+    res.redirect('/');
 }
 
 module.exports = {
