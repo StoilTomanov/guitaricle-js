@@ -6,6 +6,7 @@ function loginGet(req, res) {
 }
 
 function loginPost(req, res) {
+    console.log(req.body);
     res.redirect('/');
 }
 
@@ -17,6 +18,8 @@ function registerGet(req, res) {
 }
 
 function registerPost(req, res) {
+    console.log(req.body);
+
     res.redirect('/');
 }
 

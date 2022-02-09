@@ -9,11 +9,12 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
+        "bcrypt": "^5.0.1",
         "express": "^4.17.2",
         "express-handlebars": "^6.0.2",
+        "express-session": "^1.17.2",
         "mongoose": "^6.1.10"
     },
-    "devDependencies": {},
     "repository": {
         "type": "git",
         "url": "git+https://github.com/StoilTomanov/guitaricle-js.git"

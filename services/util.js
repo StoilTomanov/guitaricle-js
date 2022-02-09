@@ -1,3 +1,13 @@
+const bcrypt = require('bcrypt');
+
+async function hashPassword(password) {
+    return bcrypt.hash(password, 10);
+}
+
+async function comparePassword(password, hashedPassword) {
+    return bcrypt.compare(password, hashedPassword)
+}
+
 function guitarViewModel(guitar) {
     const model = {
         id: guitar._id,
@@ -27,4 +37,6 @@ function accessoryViewModel(accessory) {
 module.exports = {
     guitarViewModel,
     accessoryViewModel,
+    hashPassword,
+    comparePassword,
 }

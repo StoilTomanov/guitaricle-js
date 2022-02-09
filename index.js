@@ -60,6 +60,7 @@ const { notFound } = require('./controllers/notFound');
 const { initDb } = require('./models/index');
 
 const storage = require('./middlewares/storage');
+const authService = require('./middlewares/auth');
 
 async function start() {
     await initDb();
@@ -74,6 +75,7 @@ async function start() {
     app.use(express.urlencoded({ extended: true }));
     app.use('/static/', express.static('static'));
     app.use(storage());
+    app.use(authService());
 
     // express router setup
     app.get('/', home);
