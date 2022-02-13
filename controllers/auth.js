@@ -5,9 +5,14 @@ function loginGet(req, res) {
     res.render('login');
 }
 
-function loginPost(req, res) {
-    console.log(req.body);
-    res.redirect('/');
+async function loginPost(req, res) {
+    try {
+        await req.authService.login(req.body.username, req.body.password);
+        res.redirect('/');
+    } catch (error) {
+        console.error(error.message);
+        res.redirect('/login');
+    }
 }
 
 function registerGet(req, res) {
@@ -17,10 +22,24 @@ function registerGet(req, res) {
     res.render('register');
 }
 
-function registerPost(req, res) {
-    console.log(req.body);
+async function registerPost(req, res) {
+    if (req.body.username == '' || req.body.password == '') {
+        res.redirect('/register');
+        return;
+    }
 
-    res.redirect('/');
+    if (req.body.password != req.body.repeatPassword) {
+        res.redirect('/register');
+        return;
+    }
+    try {
+        await req.authService.register(req.body.username, req.body.password);
+        res.redirect('/');
+    } catch (error) {
+        console.error(error.message)
+        res.redirect('/register');
+
+    }
 }
 
 function logout(req, res) {

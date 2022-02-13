@@ -43,6 +43,7 @@
 // initial import
 const express = require('express');
 const handlebars = require('express-handlebars');
+const session = require('express-session')
 const port = 3000;
 
 // controllers import
@@ -70,8 +71,14 @@ async function start() {
         extname: '.hbs'
     }).engine);
 
-    app.set('view engine', '.hbs');
+    app.set('view engine', 'hbs');
 
+    app.use(session({
+        secret: 'super secret secret',
+        resave: false,
+        saveUninitialized: true,
+        cookie: { secure: 'auto' },
+    }))
     app.use(express.urlencoded({ extended: true }));
     app.use('/static/', express.static('static'));
     app.use(storage());
