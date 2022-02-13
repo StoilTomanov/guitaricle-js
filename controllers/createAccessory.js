@@ -11,8 +11,10 @@ async function accessoryPost(req, res) {
         name: req.body.name,
         description: req.body.description,
         imageUrl: req.body.imageUrl,
-        price: req.body.price,
-    }
+        price: Number(req.body.price),
+        owner: req.session.user.id,
+    };
+
     try {
         await req.storage.createAccessory(accessory);
         res.redirect('/');

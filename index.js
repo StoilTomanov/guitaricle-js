@@ -29,21 +29,21 @@
 // - [x] attach accessory to guitar
 // - [x] update details to include accessory
 // - [x] auth controller with login, register, logout actions
-// - [ ] protect routes
+// - [x] protect routes
 // - [ ] only show edit buttons for record owner
 // [x] add database connection
 // [x] create Guitar model
 // [x] upgrade guitar service to use Guitar model
 // [x] add validation rules to Guitar model
 // [x] create Accessory model
-// [ ] add session middleware and auth libraries
-// [ ] create User model
-// [ ] add owner property to Guitar, Accessory models
+// [x] add session middleware and auth libraries
+// [x] create User model
+// [x] add owner property to Guitar, Accessory models
 
 // initial import
 const express = require('express');
 const handlebars = require('express-handlebars');
-const session = require('express-session')
+const session = require('express-session');
 const port = 3000;
 
 // controllers import
