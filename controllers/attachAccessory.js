@@ -7,6 +7,10 @@ async function attachGet(req, res) {
             req.storage.getAllAccessories()
         ]);
 
+        if (guitar.owner != res.session.user.id) {
+            return res.redirect('login')
+        }
+
         const exitstingId = guitar.accessories.map(a => a.id.toString())
         const availableAccessories = accessories.filter(a => exitstingId.includes(a.id.toString()) == false)
 
@@ -28,8 +32,11 @@ async function attachPost(req, res) {
     const accessoryId = req.body.accessory;
 
     try {
-        req.storage.attachAccessory(guitarId, accessoryId)
-        res.redirect('/');
+        if (await req.storage.attachAccessory(guitarId, accessoryId, req.session.user.id)) {
+            res.redirect('/');
+        } else {
+            res.redirect('/login');
+        }
     } catch (error) {
         console.error('Error occure when creating the accessory');
         console.error(error.message);

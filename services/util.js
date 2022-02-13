@@ -16,6 +16,7 @@ function guitarViewModel(guitar) {
         price: guitar.price,
         imageUrl: guitar.imageUrl,
         accessories: guitar.accessories,
+        owner: guitar.owner,
     }
     if (model.accessories.length > 0 && model.accessories[0].name) {
         model.accessories = model.accessories.map(accessoryViewModel);
@@ -31,6 +32,7 @@ function accessoryViewModel(accessory) {
         description: accessory.description,
         imageUrl: accessory.imageUrl,
         price: accessory.price,
+        owner: accessory.owner,
     }
 }
 

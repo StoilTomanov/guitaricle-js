@@ -2,6 +2,10 @@ async function deleteGuitarGet(req, res) {
     const id = req.params.id;
     const guitar = await req.storage.getById(id);
 
+    if (guitar.owner != req.session, user.id) {
+        return res.redirect('/login');
+    }
+
     if (guitar) {
         res.locals = {
             guitar,
@@ -16,8 +20,11 @@ async function deleteGuitarGet(req, res) {
 
 async function deleteGuitarPost(req, res) {
     try {
-        await req.storage.deleteRecord(req.params.id)
-        res.redirect('/');
+        if (await req.storage.deleteRecord(req.params.id, req.session.user.id)) {
+            res.redirect('/');
+        } else {
+            res.redirect('/login');
+        }
     } catch (err) {
         res.redirect('/404');
     }

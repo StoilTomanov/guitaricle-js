@@ -32,16 +32,26 @@ async function createGuitar(guitar) {
 }
 
 // record removal
-async function deleteRecord(id) {
+async function deleteRecord(id, ownerId) {
     if (id) {
+        const currentGuitar = await Guitar.findById(id);
+        if (currentGuitar.owner != ownerId) {
+            return false;
+        }
+
         await Guitar.findByIdAndDelete(id);
+        return true;
     }
 }
 
 // edit record
-async function editRecord(guitar, id) {
+async function editRecord(guitar, id, ownerId) {
     if (guitar && id) {
         const currentGuitar = await Guitar.findById(id);
+
+        if (currentGuitar.owner != ownerId) {
+            return false;
+        }
 
         currentGuitar.name = guitar.name;
         currentGuitar.description = guitar.description;
@@ -50,11 +60,17 @@ async function editRecord(guitar, id) {
         currentGuitar.accessories = guitar.accessories;
 
         currentGuitar.save();
+
+        return true;
     }
 }
 
 async function attachAccessory(guitarId, accessoryId) {
     const currentGuitar = await Guitar.findById(guitarId);
+
+    if (currentGuitar.owner != ownerId) {
+        return false;
+    }
 
     currentGuitar.accessories.push(accessoryId);
 

@@ -16,7 +16,7 @@
 // - [x] register user
 // - [x] login user
 // - [x] logout user
-// - [ ] add authorization checks to data modification
+// - [x] add authorization checks to data modification
 // implement controllers
 // - [x] home (catalog)
 // - [x] about
@@ -30,7 +30,7 @@
 // - [x] update details to include accessory
 // - [x] auth controller with login, register, logout actions
 // - [x] protect routes
-// - [ ] only show edit buttons for record owner
+// - [x] only show edit buttons for record owner
 // [x] add database connection
 // [x] create Guitar model
 // [x] upgrade guitar service to use Guitar model

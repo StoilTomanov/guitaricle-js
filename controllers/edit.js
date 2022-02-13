@@ -1,6 +1,12 @@
+const e = require("express");
+
 async function editGet(req, res) {
     const id = req.params.id;
     const guitar = await req.storage.getById(id);
+
+    if (guitar.owner != req.session, user.id) {
+        return res.redirect('/login');
+    }
 
     if (guitar) {
         res.locals = {
@@ -23,8 +29,11 @@ async function editPost(req, res) {
         price: Number(req.body.price),
     }
     try {
-        req.storage.editRecord(guitar, id);
-        res.redirect('/');
+        if (await req.storage.editRecord(guitar, id, req.session.user.id)) {
+            res.redirect('/')
+        } else {
+            res.redirect('/login');
+        }
     } catch (error) {
         res.redirect('/404');
     }

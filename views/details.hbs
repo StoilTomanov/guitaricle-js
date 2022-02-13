@@ -1,12 +1,13 @@
-{{#with guitar}}
-<h1>{{name}}</h1>
-<img class="cube" src="{{imageUrl}}">
+<h1>{{guitar.name}}</h1>
+<img class="cube" src="{{guitar.imageUrl}}">
 <div class="details">
-  <p><span>Description:</span>{{description}}</p>
-  <p><span>Price:</span> {{price}}</p>
-  <a class="btn" href="/edit/{{id}}">Edit</a>
-  <a class="btn" href="/attach/{{id}}">Attach Accessory</a>
-  <a class="btn" href="/delete/{{id}}">Delete</a>
+  <p><span>Description:</span>{{guitar.description}}</p>
+  <p><span>Price:</span> {{guitar.price}}</p>
+  {{#if isOwner}}
+  <a class="btn" href="/edit/{{guitar.id}}">Edit</a>
+  <a class="btn" href="/attach/{{guitar.id}}">Attach Accessory</a>
+  <a class="btn" href="/delete/{{guitar.id}}">Delete</a>
+  {{/if}}
   <a class="btn" href="/">Back</a>
 </div>
 
@@ -18,4 +19,3 @@
     <h3 class="italic">This guitar has no accessories yet...</h3>
     {{/each}}
 </div>
-{{/with}}
