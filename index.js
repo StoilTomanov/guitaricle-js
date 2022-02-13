@@ -13,9 +13,9 @@
 // - [x] accessory read
 // - [x] accessory create
 // - [x] attach accessory
-// - [ ] register user
-// - [ ] login user
-// - [ ] logout user
+// - [x] register user
+// - [x] login user
+// - [x] logout user
 // - [ ] add authorization checks to data modification
 // implement controllers
 // - [x] home (catalog)
@@ -28,7 +28,7 @@
 // - [x] create accessory
 // - [x] attach accessory to guitar
 // - [x] update details to include accessory
-// - [ ] auth controller with login, register, logout actions
+// - [x] auth controller with login, register, logout actions
 // - [ ] protect routes
 // - [ ] only show edit buttons for record owner
 // [x] add database connection
@@ -62,6 +62,7 @@ const { initDb } = require('./models/index');
 
 const storage = require('./middlewares/storage');
 const authService = require('./middlewares/auth');
+const { isLoggedIn } = require('./services/util');
 
 async function start() {
     await initDb();
@@ -89,20 +90,20 @@ async function start() {
     app.get('/about', about);
     app.get('/details/:id', details);
     app.route('/create')
-        .get(create.get)
-        .post(create.post);
+        .get(isLoggedIn(), create.get)
+        .post(isLoggedIn(), create.post);
     app.route('/delete/:id')
-        .get(deleteGuitar.deleteGuitarGet)
-        .post(deleteGuitar.deleteGuitarPost);
+        .get(isLoggedIn(), deleteGuitar.deleteGuitarGet)
+        .post(isLoggedIn(), deleteGuitar.deleteGuitarPost);
     app.route('/edit/:id')
-        .get(edit.editGet)
-        .post(edit.editPost);
+        .get(isLoggedIn(), edit.editGet)
+        .post(isLoggedIn(), edit.editPost);
     app.route('/accessory')
-        .get(accessory.accessoryGet)
-        .post(accessory.accessoryPost);
+        .get(isLoggedIn(), accessory.accessoryGet)
+        .post(isLoggedIn(), accessory.accessoryPost);
     app.route('/attach/:id')
-        .get(attach.attachGet)
-        .post(attach.attachPost);
+        .get(isLoggedIn(), attach.attachGet)
+        .post(isLoggedIn(), attach.attachPost);
     app.route('/login')
         .get(auth.loginGet)
         .post(auth.loginPost);

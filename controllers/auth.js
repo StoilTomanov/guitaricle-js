@@ -43,6 +43,7 @@ async function registerPost(req, res) {
 }
 
 function logout(req, res) {
+    req.authService.logout();
     res.redirect('/');
 }
 

@@ -6,6 +6,7 @@ async function home(req, res) {
         title: 'Guitaricle',
     }
     res.render('index');
+    console.log(res.locals);
 }
 
 module.exports = {

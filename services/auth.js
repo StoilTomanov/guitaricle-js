@@ -26,7 +26,12 @@ async function login(session, username, password) {
     }
 }
 
+function logout(session) {
+    delete session.user;
+}
+
 module.exports = {
     register,
     login,
+    logout,
 }
