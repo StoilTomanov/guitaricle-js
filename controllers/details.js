@@ -5,7 +5,8 @@ async function details(req, res) {
     if (guitar) {
         res.locals = {
             guitar,
-            title: `Guitaricle - ${guitar.name}`
+            title: `Guitaricle - ${guitar.name}`,
+            userStatus: res.userStatus,
         }
         res.render('details');
     } else {

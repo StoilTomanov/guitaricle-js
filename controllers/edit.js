@@ -5,7 +5,8 @@ async function editGet(req, res) {
     if (guitar) {
         res.locals = {
             guitar,
-            title: `Guitaricle - Edit ${guitar.name}`
+            title: `Guitaricle - Edit ${guitar.name}`,
+            userStatus: res.userStatus,
         }
         res.render('edit');
     } else {

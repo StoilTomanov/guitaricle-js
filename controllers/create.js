@@ -1,6 +1,7 @@
 function get(req, res) {
     res.locals = {
         title: "Add a guitar",
+        userStatus: res.userStatus,
     }
     res.render('create');
 }

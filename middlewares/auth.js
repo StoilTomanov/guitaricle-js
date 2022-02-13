@@ -8,7 +8,6 @@ module.exports = () => (req, res, next) => {
         };
 
     }
-    console.log('mid', res.locals);
     req.authService = {
         register: (...params) => register(req.session, ...params),
         login: (...params) => login(req.session, ...params),

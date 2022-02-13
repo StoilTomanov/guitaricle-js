@@ -5,7 +5,8 @@ async function deleteGuitarGet(req, res) {
     if (guitar) {
         res.locals = {
             guitar,
-            title: `Guitaricle - Delete ${guitar.name}`
+            title: `Guitaricle - Delete ${guitar.name}`,
+            userStatus: res.userStatus,
         }
         res.render('delete');
     } else {

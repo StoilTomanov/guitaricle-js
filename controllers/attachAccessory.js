@@ -14,6 +14,7 @@ async function attachGet(req, res) {
             guitar,
             accessories: availableAccessories,
             title: "Attach accessory",
+            userStatus: res.userStatus,
         };
 
         res.render('attachAccessory');

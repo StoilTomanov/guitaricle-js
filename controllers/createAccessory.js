@@ -1,6 +1,7 @@
 function accessoryGet(req, res) {
     res.locals = {
         title: "Create accessory",
+        userStatus: res.userStatus,
     }
     res.render('createAccessory');
 }
