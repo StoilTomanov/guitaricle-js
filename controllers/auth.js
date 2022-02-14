@@ -1,3 +1,5 @@
+const { validationResult } = require("express-validator");
+
 function loginGet(req, res) {
     res.locals = {
         title: "Login",
@@ -23,22 +25,27 @@ function registerGet(req, res) {
 }
 
 async function registerPost(req, res) {
-    if (req.body.username == '' || req.body.password == '') {
-        res.redirect('/register');
-        return;
-    }
+    const { errors } = validationResult(req);
 
-    if (req.body.password != req.body.repeatPassword) {
-        res.redirect('/register');
-        return;
-    }
+    // if (req.body.username == '' || req.body.password == '') {
+    //     res.redirect('/register');
+    //     return;
+    // }
+
+    // if (req.body.password != req.body.repeatPassword) {
+    //     res.redirect('/register');
+    //     return;
+    // }
+
     try {
+        if (errors.length > 0) {
+            throw errors;
+        }
         await req.authService.register(req.body.username, req.body.password);
         res.redirect('/');
     } catch (error) {
-        console.error(error.message)
-        res.redirect('/register');
-
+        console.error(error)
+        res.render('register', { title: "Register", error, data: { username: req.body.username } });
     }
 }
 

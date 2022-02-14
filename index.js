@@ -64,6 +64,8 @@ const storage = require('./middlewares/storage');
 const authService = require('./middlewares/auth');
 const { isLoggedIn } = require('./services/util');
 
+const { body } = require('express-validator');
+
 async function start() {
     await initDb();
     // app setup
@@ -109,7 +111,16 @@ async function start() {
         .post(auth.loginPost);
     app.route('/register')
         .get(auth.registerGet)
-        .post(auth.registerPost);
+        .post(body('username')
+            .notEmpty().withMessage('Username is required')
+            .isLength({ min: 2 }).withMessage('Username must be at least 2 character long')
+            .isAlphanumeric().withMessage('Username must contain only letters and numbers'),
+            body('password')
+            .notEmpty().withMessage('Password required')
+            .isLength({ min: 3 }).withMessage('Password must be at least 3 character long'),
+            body('repeatPassword')
+            .custom((value, { req }) => value == req.body.password).withMessage('Passwords must match'),
+            auth.registerPost);
     app.get('/logout', auth.logout);
 
     app.all('*', notFound);
