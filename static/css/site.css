@@ -53,21 +53,27 @@ header ul li a:hover {
 }
 
 div.errors {
+    border: 1px solid rgb(199, 199, 199);
+    margin-bottom: 30px;
+    box-shadow: 5px 5px 30px rgb(194, 194, 194);
+    animation: notifications 3s;
     font-size: 110%;
-    animation: notifications 5s;
     color: rgb(10, 10, 10);
-    border-radius: 5px;
+    border-radius: 15px;
     text-align: center;
+    transition: 0.5s;
 }
 
 @keyframes notifications {
     from {
         display: block;
         color: rgb(253, 253, 253);
-        background-color: red;
+        transition: 1.5s;
+        background-color: rgb(250, 93, 93);
     }
     to {
-        color: rgb(10, 10, 10);
+        color: rgba(0, 0, 0, 0.925);
+        transition: 1.5s;
         display: none;
     }
 }
