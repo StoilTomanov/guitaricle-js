@@ -1,14 +1,21 @@
 <h1>Create Accessory</h1>
 <div class="form">
+      {{#if error}}
+    <div class="errors">
+        {{#each error}}
+        <p>{{msg}}</p>
+        {{/each}}
+    </div>
+    {{/if}}
     <form action="/accessory" method="POST">
         <label for="name">Name</label>
-        <input type="text" id="name" name="name">
+        <input type="text" id="name" name="name" value="{{data.name}}">
         <label for="name">Description</label>
-        <textarea id="description" name="description"></textarea>
+        <textarea id="description" name="description">{{data.description}}</textarea>
         <label for="image">ImageUrl</label>
-        <input type="text" id="image" name="imageUrl">
+        <input type="text" id="image" name="imageUrl" value="{{data.imageUrl}}">
         <label for="price">Price</label>
-        <input type="number" id="price" name="price">
+        <input type="number" id="price" name="price" value="{{data.price}}">
         <input type="submit" value="Create">
         <a href="/" class="cancel">Cancel</a>
     </form>

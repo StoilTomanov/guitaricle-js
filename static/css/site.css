@@ -52,6 +52,26 @@ header ul li a:hover {
     text-decoration: underline;
 }
 
+div.errors {
+    font-size: 110%;
+    animation: notifications 5s;
+    color: rgb(10, 10, 10);
+    border-radius: 5px;
+    text-align: center;
+}
+
+@keyframes notifications {
+    from {
+        display: block;
+        color: rgb(253, 253, 253);
+        background-color: red;
+    }
+    to {
+        color: rgb(10, 10, 10);
+        display: none;
+    }
+}
+
 main {
     margin: 0 4em;
     margin-bottom: 100px;

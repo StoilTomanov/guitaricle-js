@@ -1,3 +1,5 @@
+const { validationResult } = require("express-validator");
+
 function accessoryGet(req, res) {
     res.locals = {
         title: "Create accessory",
@@ -15,13 +17,18 @@ async function accessoryPost(req, res) {
         owner: req.session.user.id,
     };
 
+    const { errors } = validationResult(req);
+
     try {
+        if (errors.length > 0) {
+            throw errors;
+        }
         await req.storage.createAccessory(accessory);
         res.redirect('/');
     } catch (error) {
-        console.error('Error occure when creating the accessory');
-        console.error(error.message);
-        res.redirect('/accessory');
+        console.error(error);
+        res.render('createAccessory', { userStatus: res.userStatus, accessory, title: "Create accessory", error, data: { name: req.body.name, description: req.body.description, imageUrl: req.body.imageUrl, price: req.body.price, } });
+
     }
 
 }

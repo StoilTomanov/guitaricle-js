@@ -8,12 +8,18 @@ function loginGet(req, res) {
 }
 
 async function loginPost(req, res) {
+    const { errors } = validationResult(req);
+
     try {
+        if (errors.length > 0) {
+            throw errors;
+        }
         await req.authService.login(req.body.username, req.body.password);
         res.redirect('/');
     } catch (error) {
-        console.error(error.message);
-        res.redirect('/login');
+        console.error(error);
+        res.render('login', { title: "Login", error, data: { username: req.body.username } });
+
     }
 }
 

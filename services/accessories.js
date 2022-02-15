@@ -8,6 +8,9 @@ async function getAllAccessories() {
 
 async function createAccessory(accessory) {
     const newRecord = new Accessory(accessory);
+    if (newRecord.imageUrl == '') {
+        newRecord.imageUrl = undefined;
+    }
     await newRecord.save();
 }
 

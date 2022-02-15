@@ -7,7 +7,7 @@ async function attachGet(req, res) {
             req.storage.getAllAccessories()
         ]);
 
-        if (guitar.owner != res.session.user.id) {
+        if (guitar.owner != req.session.user.id) {
             return res.redirect('login')
         }
 
@@ -23,6 +23,7 @@ async function attachGet(req, res) {
 
         res.render('attachAccessory');
     } catch (error) {
+        console.error(error);
         res.redirect('/404');
     }
 }

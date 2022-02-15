@@ -1,3 +1,5 @@
+const { validationResult } = require("express-validator");
+
 function get(req, res) {
     res.locals = {
         title: "Add a guitar",
@@ -15,9 +17,21 @@ async function post(req, res) {
         owner: req.session.user.id,
     };
 
-    await req.storage.createGuitar(guitar);
+    const { errors } = validationResult(req);
 
-    res.redirect('/');
+    try {
+        if (errors.length > 0) {
+            throw errors;
+        }
+
+        await req.storage.createGuitar(guitar);
+        res.redirect('/');
+
+    } catch (error) {
+        console.error(error);
+        res.render('create', { userStatus: res.userStatus, guitar, title: "Create", error, data: { name: req.body.name, description: req.body.description, imageUrl: req.body.imageUrl, price: req.body.price, } });
+    }
+
 }
 
 module.exports = {

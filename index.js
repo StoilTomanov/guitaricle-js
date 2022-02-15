@@ -93,25 +93,43 @@ async function start() {
     app.get('/details/:id', details);
     app.route('/create')
         .get(isLoggedIn(), create.get)
-        .post(isLoggedIn(), create.post);
+        .post(isLoggedIn(),
+            body('name').notEmpty().withMessage('Name is required'),
+            body('price').notEmpty().withMessage('Price is required. If the price is unknown enter 0'),
+            create.post);
     app.route('/delete/:id')
         .get(isLoggedIn(), deleteGuitar.deleteGuitarGet)
         .post(isLoggedIn(), deleteGuitar.deleteGuitarPost);
     app.route('/edit/:id')
         .get(isLoggedIn(), edit.editGet)
-        .post(isLoggedIn(), edit.editPost);
+        .post(isLoggedIn(),
+            body('name').notEmpty().withMessage('Name is required'),
+            body('price').notEmpty().withMessage('Price is required. If the price is unknown enter 0'),
+            edit.editPost);
     app.route('/accessory')
         .get(isLoggedIn(), accessory.accessoryGet)
-        .post(isLoggedIn(), accessory.accessoryPost);
+        .post(isLoggedIn(),
+            body('name').notEmpty().withMessage('Name is required'),
+            body('price').notEmpty().withMessage('Price is required. If the price is unknown enter 0'),
+            accessory.accessoryPost);
     app.route('/attach/:id')
         .get(isLoggedIn(), attach.attachGet)
         .post(isLoggedIn(), attach.attachPost);
     app.route('/login')
         .get(auth.loginGet)
-        .post(auth.loginPost);
+        .post(body('password').trim(),
+            body('username').trim(),
+            body('username')
+            .notEmpty().withMessage('Username is required'),
+            body('password')
+            .notEmpty().withMessage('Password is required'),
+            auth.loginPost);
     app.route('/register')
         .get(auth.registerGet)
-        .post(body('username')
+        .post(body('username').trim(),
+            body('password').trim(),
+            body('repeatPassword').trim(),
+            body('username')
             .notEmpty().withMessage('Username is required')
             .isLength({ min: 2 }).withMessage('Username must be at least 2 character long')
             .isAlphanumeric().withMessage('Username must contain only letters and numbers'),

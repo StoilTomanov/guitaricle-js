@@ -2,7 +2,7 @@ async function deleteGuitarGet(req, res) {
     const id = req.params.id;
     const guitar = await req.storage.getById(id);
 
-    if (guitar.owner != req.session, user.id) {
+    if (guitar.owner != req.session.user.id) {
         return res.redirect('/login');
     }
 

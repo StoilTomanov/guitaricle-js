@@ -1,17 +1,22 @@
-{{#with guitar}}
 <h1>Edit guitar</h1>
 <div class="form">
-  <form action="/edit/{{id}}" method="POST">
+  {{#if error}}
+    <div class="errors">
+        {{#each error}}
+        <p>{{msg}}</p>
+        {{/each}}
+    </div>
+    {{/if}}
+  <form action="/edit/{{guitar.id}}" method="POST">
     <label for="name">Name</label>
-    <input type="text" id="name" name="name" value="{{name}}">
+    <input type="text" id="name" name="name" value="{{guitar.name}}">
     <label for="name">Description</label>
-    <textarea id="name" name="description">{{description}}</textarea>
+    <textarea id="name" name="description">{{guitar.description}}</textarea>
     <label for="image">ImageUrl</label>
-    <input type="text" id="image" name="imageUrl" value="{{imageUrl}}">
+    <input type="text" id="image" name="imageUrl" value="{{guitar.imageUrl}}">
     <label for="price">Price</label>
-    <input type="number" id="price" name="price" value="{{price}}">
+    <input type="number" id="price" name="price" value="{{guitar.price}}">
     <input type="submit" value="Confirm edition">
-    <a href="/details/{{id}}" class="cancel">Cancel</a>
+    <a href="/details/{{guitar.id}}" class="cancel">Cancel</a>
   </form>
 </div>
-{{/with}}

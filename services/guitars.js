@@ -22,13 +22,20 @@ async function getById(id) {
 // record creation
 async function createGuitar(guitar) {
     const result = new Guitar(guitar);
+    console.log('result', result);
     if (result.imageUrl == '') {
-        result.imageUrl = 'https://st4.depositphotos.com/14953852/22772/v/600/depositphotos_227725020-stock-illustration-image-available-icon-flat-vector.jpg'
+        result.imageUrl = 'https://st4.depositphotos.com/14953852/22772/v/600/depositphotos_227725020-stock-illustration-image-available-icon-flat-vector.jpg';
     }
     if (result.description == '') {
         result.description = 'No description for this article'
     }
+
+    if (result.price == '') {
+        result.price = undefined;
+    }
+
     await result.save();
+
 }
 
 // record removal
@@ -59,13 +66,13 @@ async function editRecord(guitar, id, ownerId) {
         currentGuitar.price = guitar.price;
         currentGuitar.accessories = guitar.accessories;
 
-        currentGuitar.save();
+        await currentGuitar.save();
 
         return true;
     }
 }
 
-async function attachAccessory(guitarId, accessoryId) {
+async function attachAccessory(guitarId, accessoryId, ownerId) {
     const currentGuitar = await Guitar.findById(guitarId);
 
     if (currentGuitar.owner != ownerId) {
@@ -75,6 +82,7 @@ async function attachAccessory(guitarId, accessoryId) {
     currentGuitar.accessories.push(accessoryId);
 
     await currentGuitar.save();
+    return true;
 
 }
 

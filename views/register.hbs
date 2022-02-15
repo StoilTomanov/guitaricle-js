@@ -2,7 +2,7 @@
 <div class="form">
     <form action="/register" method="POST">
     {{#if error}}
-    <div>
+    <div class="errors">
         {{#each error}}
         <p>{{msg}}</p>
         {{/each}}
