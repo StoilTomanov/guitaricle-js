@@ -15,6 +15,9 @@ img {
 }
 
 img.cube {
+    padding: 10px;
+    width: 100px;
+    height: 260px;
     display: block;
     margin: 0 auto;
     text-align: center;
@@ -106,13 +109,14 @@ div.listing {
 }
 
 div.cube {
-    box-shadow: 3px 3px 15px 2px rgb(204, 204, 204);
+    box-shadow: 3px 3px 15px 2px rgb(190, 190, 190);
     display: inline-block;
-    border: 1px solid #2b415433;
+    border: 1px solid #ffffff33;
+    border-radius: 10px;
     background: white;
     /* width: 23%; */
-    height: 420px;
-    width: 330px;
+    height: 530px;
+    width: 340px;
     margin: 40px;
     vertical-align: top;
     transition: 0.5s;
