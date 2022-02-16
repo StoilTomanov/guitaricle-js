@@ -108,6 +108,11 @@ div.listing {
     text-align: center;
 }
 
+p.results {
+    margin-top: 15%;
+    font-size: 150%;
+}
+
 div.cube {
     box-shadow: 3px 3px 15px 2px rgb(190, 190, 190);
     display: inline-block;
