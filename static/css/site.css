@@ -56,9 +56,10 @@ div.errors {
     border: 1px solid rgb(199, 199, 199);
     margin-bottom: 30px;
     box-shadow: 5px 5px 30px rgb(194, 194, 194);
-    animation: notifications 3s;
+    animation: notifications 5s;
     font-size: 110%;
-    color: rgb(10, 10, 10);
+    font-weight: 800;
+    color: rgb(167, 21, 21);
     border-radius: 15px;
     text-align: center;
     transition: 0.5s;
@@ -72,7 +73,7 @@ div.errors {
         background-color: rgb(250, 93, 93);
     }
     to {
-        color: rgba(0, 0, 0, 0.925);
+        color: rgba(139, 26, 26, 0.925);
         transition: 1.5s;
         display: none;
     }

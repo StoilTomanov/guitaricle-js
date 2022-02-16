@@ -137,7 +137,7 @@ async function start() {
             .notEmpty().withMessage('Password required')
             .isLength({ min: 3 }).withMessage('Password must be at least 3 character long'),
             body('repeatPassword')
-            .custom((value, { req }) => value == req.body.password).withMessage('Passwords must match'),
+            .custom((value, { req }) => value == req.body.password).withMessage('Passwords don\'t match'),
             auth.registerPost);
     app.get('/logout', auth.logout);
 

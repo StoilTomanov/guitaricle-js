@@ -17,6 +17,13 @@ async function loginPost(req, res) {
         await req.authService.login(req.body.username, req.body.password);
         res.redirect('/');
     } catch (error) {
+        if (error.message != undefined && error.message == 'Incorrect username or password') {
+            error = [{
+                msg: 'Incorrect username or password',
+                param: 'password',
+                location: 'body'
+            }]
+        }
         console.error(error);
         res.render('login', { title: "Login", error, data: { username: req.body.username } });
 
@@ -32,16 +39,6 @@ function registerGet(req, res) {
 
 async function registerPost(req, res) {
     const { errors } = validationResult(req);
-
-    // if (req.body.username == '' || req.body.password == '') {
-    //     res.redirect('/register');
-    //     return;
-    // }
-
-    // if (req.body.password != req.body.repeatPassword) {
-    //     res.redirect('/register');
-    //     return;
-    // }
 
     try {
         if (errors.length > 0) {
