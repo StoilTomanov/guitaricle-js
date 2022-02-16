@@ -29,6 +29,9 @@ async function post(req, res) {
 
     } catch (error) {
         console.error(error);
+        if (error.name == 'ValidationError') {
+            error = Object.values(error.errors).map(e => ({ msg: e.message }))
+        }
         res.render('create', { userStatus: res.userStatus, guitar, title: "Create", error, data: { name: req.body.name, description: req.body.description, imageUrl: req.body.imageUrl, price: req.body.price, } });
     }
 

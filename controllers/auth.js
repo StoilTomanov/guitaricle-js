@@ -48,6 +48,13 @@ async function registerPost(req, res) {
         res.redirect('/');
     } catch (error) {
         console.error(error)
+        if (error.code == 11000 && error.name == 'MongoServerError') {
+            error = [{
+                msg: 'Username already exists',
+                param: 'username',
+                location: 'body'
+            }]
+        }
         res.render('register', { title: "Register", error, data: { username: req.body.username } });
     }
 }

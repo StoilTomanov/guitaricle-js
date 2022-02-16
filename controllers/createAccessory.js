@@ -27,6 +27,9 @@ async function accessoryPost(req, res) {
         res.redirect('/');
     } catch (error) {
         console.error(error);
+        if (error.name == 'ValidationError') {
+            error = Object.values(error.errors).map(e => ({ msg: e.message }))
+        }
         res.render('createAccessory', { userStatus: res.userStatus, accessory, title: "Create accessory", error, data: { name: req.body.name, description: req.body.description, imageUrl: req.body.imageUrl, price: req.body.price, } });
 
     }
