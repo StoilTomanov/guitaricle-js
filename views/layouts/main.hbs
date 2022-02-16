@@ -13,15 +13,15 @@
     <header>
       <ul>
         <li><a href="/"><img class="logo" src="/static/images/logo-guitar.png"></a></li>
-        <li><a href="/">Catalog</a></li>
-        <li><a href="/about">About</a></li>
+        <li><a href="/" class="navbar">Catalog</a></li>
+        <li><a href="/about" class="navbar">About</a></li>
         {{#if userStatus.hasUser}}
-        <li><a href="/create">Add a Guitar</a></li>
-        <li><a href="/accessory">Create Accessory</a></li>
-        <li><a href="/logout">Logout</a></li>
+        <li><a href="/create" class="navbar">Add a Guitar</a></li>
+        <li><a href="/accessory" class="navbar">Create Accessory</a></li>
+        <li><a href="/logout" class="navbar">Logout</a></li>
         {{else}}
-        <li><a href="/login">Login</a></li>
-        <li><a href="/register">Register</a></li>
+        <li><a href="/login" class="navbar">Login</a></li>
+        <li><a href="/register" class="navbar">Register</a></li>
         {{/if}}
       </ul>
     </header>
