@@ -116,7 +116,7 @@ descr:
 img: https://images.static-thomann.de/pics/prod/383735.jpg
 ------------------------------------------------------------------------------------------------------------
 Cort SFX1F NS 2
-price: 222
+price: 220
 descr:
     With cutaway
     Top: Solid spruce
@@ -170,4 +170,5 @@ price: 80
 Planet Waves PW-CP-07 NS Capo Lite
 descr: Capodaster for any type of guitar that will open a new world with opportunities
 img: https://rockshock.eu/uploads/2021/11/01/1635771806_326_i.jpg
+price: 20
 ------------------------------------------------------------------------------------------------------------
