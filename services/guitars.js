@@ -2,11 +2,25 @@ const { Guitar } = require('../models/Guitar');
 const { guitarViewModel } = require('./util');
 
 // read all records
-async function getAll() {
-    const allGuitars = await Guitar.find({});
-    if (allGuitars) {
-        return allGuitars.map(guitar => (guitarViewModel(guitar)));
+async function getAll(query) {
+    const options = {};
+
+    if (query.search) {
+        options.name = new RegExp(query.search, 'i');
     }
+    if (query.from) {
+        options.price = { $gte: Number(query.from) };
+    }
+    if (query.to) {
+        if (!options.price) {
+            options.price = {};
+        }
+        options.price.$lte = Number(query.to);
+    }
+
+    const allGuitars = await Guitar.find(options);
+    return allGuitars.map(guitar => (guitarViewModel(guitar)));
+
 }
 
 // get record by id
