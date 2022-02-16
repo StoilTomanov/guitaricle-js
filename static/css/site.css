@@ -46,7 +46,7 @@ header ul li a.navbar {
     color: white;
     font-weight: bold;
     margin: 0 1em;
-    font-size: 100%;
+    font-size: 105%;
     color: rgb(255, 255, 255);
     transition: 0.3s;
 }
@@ -54,7 +54,7 @@ header ul li a.navbar {
 header ul li a.navbar:hover {
     cursor: pointer;
     color: rgb(0, 218, 18);
-    font-size: 105%;
+    font-size: 110%;
     transition: 0.3s;
 }
 
